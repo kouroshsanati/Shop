@@ -19,9 +19,11 @@ class OrdersFactory extends Factory
     public function definition(): array
     {
         $quantity = random_int(1, 10);
+
         $product = Product::query()->inRandomOrder()->first();
+        //dd( User::query()->inRandomOrder()->first());
         return [
-            'customer_id' => User::query()->inRandomOrder()->first()->id,
+            'customer_id' => User::query()->inRandomOrder()->first(),
             'product_id' => $product->id,
             'quantity' => $quantity,
             'total' => $quantity * $product->price

@@ -17,8 +17,8 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'=>fake(),
-            'parent_id'=>random_int(1,3),
+            'name'=>fake()->name,
+            'parent_id'=>random_int(1,2),
             'status'=>random_int(0,1),
         ];
     }

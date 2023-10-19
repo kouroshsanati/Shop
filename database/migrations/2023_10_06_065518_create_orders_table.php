@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained();
+            $table->foreignId('customer_id')->references('id')->on('users');
             $table->foreignId('product_id')->constrained();
             $table->unsignedInteger('quantity');
             $table->unsignedInteger('total');

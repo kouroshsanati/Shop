@@ -13,12 +13,12 @@ return new class extends Migration {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('product_name');
-            $table->integer('price');
-            $table->integer('stock');
-            $table->integer('sold');
-            $table->integer('view');
+            $table->string('price');
+            $table->string('stock');
+            $table->string('sold');
+            $table->string('view');
             $table->timestamps();
-            $table->foreignIdFor(\App\Models\Category::class)->constrained();
+            $table->foreignId('category_id')->constrained();
         });
     }
 
